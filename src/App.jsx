@@ -1,18 +1,31 @@
 import './App.css'
+import React, {useState} from 'react'
 import Navbar from './components/Navbar'
 import MovieList from './components/MovieList'
 import UserContext from '../context/UserContext'
 
 function App() {
 
-  const user = {
+  const initialUser = {
     id:1,
-    name:'luis',
+    name:'meme',
     isFavorite: [1,2,3]
+  }
+ 
+  const [user, setUser]=useState(initialUser)
+
+  const login = () =>{
+    setUser(initialUser)
+  }
+  
+  const logOut = () =>{
+    setUser(null)
   }
 
   const data = {
-    user
+    user,
+    login,
+    logOut
   }
 
   return (
