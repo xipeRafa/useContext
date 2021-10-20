@@ -1,6 +1,8 @@
-const Navbar = () => {
+import React, {useContext} from "react"
+import UserContext from '../../context/UserContext';
 
-      const user = {name:'meme'}
+const Navbar = () => {
+      const {user} = useContext(UserContext)
 
       return (
             <nav>
